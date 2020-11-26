@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Matérias</h2>
+    <a  class="btn btn-success" [routerLink]="['/editar-materia',0]"> Adicionar</a>
+    <div class="container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Status</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let materia of materiaList;">
+                <td>{{materia.id}}</td>
+                <td>{{materia.name}}</td>
+                <td>
+                    <a  class="btn btn-success" (click)="updateStatus(materia.id)" *ngIf="materia.isactive==1"> Ativo</a>
+                    <a  class="btn btn-danger" (click)="updateStatus(materia.id)" *ngIf="materia.isactive==0"> Inativo</a>
+                </td>
+                <td>
+                    <a  class="btn btn-primary" [routerLink]="['/editar-materia',materia.id]"> Editar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
