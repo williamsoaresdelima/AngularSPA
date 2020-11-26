@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class MateriaService {
 
-  baseUrl = 'https://webapi20201126121123.azurewebsites.net//materia/';
+  baseUrl = 'https://webapi20201126121123.azurewebsites.net/materia/';
   
   constructor(private http: HttpClient) { }
 
